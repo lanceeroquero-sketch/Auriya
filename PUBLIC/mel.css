@@ -1,0 +1,226 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth; /* smooth scroll for nav links */
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    overflow-y: scroll; /* ensure scrollable */
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    color: #531B23;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-button {
+    padding: 10px 30px;
+    background-color: white;
+    border: 2px solid #531B23;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #531B23;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    background-color: #531B23;
+    color: white;
+}
+
+/* Scroll Snap Container */
+body {
+    scroll-snap-type: y mandatory; /* vertical snap */
+}
+
+/* Each section fills the viewport */
+.hero-section {
+    width: 100%;
+    height: 700px; /* fixed height to match image */
+    scroll-snap-align: start; /* snap to top of section */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Section-specific background colors */
+#section1 {
+    background-color: #DF9F3E;
+}
+
+#section2 {
+    background-color: #345C66;
+}
+
+#section3 {
+    background-color: #9E2A2B;
+}
+
+/* Fixed size images (1280x700) */
+.hero-section img {
+    width: 1280px;     /* fixed width */
+    height: 700px;     /* fixed height */
+    object-fit: contain; /* maintain aspect ratio, show entire image */
+    display: block;
+    max-width: 100%;   /* responsive: don't exceed screen width */
+    max-height: 100%;  /* responsive: don't exceed screen height */
+}
+
+/* Footer */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 1280px) {
+    .hero-section {
+        height: auto;
+        min-height: 700px;
+    }
+    
+    .hero-section img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-description {
+        margin: 0 auto;
+    }
+    
+    .members-grid {
+        flex-wrap: wrap;
+    }
+    
+    .about-images {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .hero-section {
+        min-height: 500px;
+    }
+    
+    .welcome {
+        font-size: 36px;
+    }
+    
+    .auriya {
+        font-size: 48px;
+    }
+    
+    .about {
+        padding: 60px 20px;
+    }
+    
+    .about-images {
+        height: 400px;
+    }
+    
+    .photo1 {
+        transform: rotate(-8deg) translateX(-100px);
+    }
+    
+    .photo3 {
+        transform: rotate(-12deg) translateX(100px);
+    }
+    
+    .members {
+        padding: 60px 20px;
+    }
+    
+    .members-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-text {
+        text-align: center;
+    }
+}
